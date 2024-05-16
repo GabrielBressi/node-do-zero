@@ -16,15 +16,11 @@ server.post('/videos', async (request, reply) => {
         duration
     })
     
-    console.log(request.body)
-
     return reply.status(201).send()
 })
 
 server.get('/videos', async (request) => {
     const search = request.query.search
-
-    console.log(search)
 
     const videos = await database.list(search)
     
